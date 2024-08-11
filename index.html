@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Car Management System</h1>
+</nav>
+    <div class="container">
+        <div class="sidebar">
+            <button class="sidebar-button" onclick="window.location.href='Vehicles.html';">Vehicles List</button>
+            <button onclick="openAddModal()" class="sidebar-button" >Add vehicle</button>
+            <button class="sidebar-button" onclick="rentAddModal()">Rent Vehicle</button>
+            <button class="sidebar-button" onclick="returnAddModal()">Returned Vehicle</button>
+            <button class="sidebar-button" onclick="window.location.href='Transactions.html';">Transactions</button>
+
+
+        </div>
+        <div class="maintenance-box">
+            <h2 style="text-align: center;">Available vehicles</h2>
+            <button class="maintenance-button" onclick="window.location.href='vehicle.html';">Honda Civic - A001</button>
+            <button class="maintenance-button">Toyota Corolla - B002</button>
+            <button class="maintenance-button">Ford Focus - C003</button>
+            <button class="maintenance-button">Chevrolet Malibu - D004</button>
+            <button class="maintenance-button">Nissan Altima - E005</button>
+            <button class="maintenance-button">Hyundai Elantra - F006</button>
+            <button class="maintenance-button">Subaru Impreza - G007</button>
+            <button class="maintenance-button">Mazda 3 - H008</button>
+            <button class="maintenance-button">Volkswagen Jetta - I009</button>
+            <button class="maintenance-button">Kia Soul - J010</button>
+            <button class="maintenance-button">BMW 3 Series - K011</button>
+            <button class="maintenance-button">Audi A4 - L012</button>
+            <button class="maintenance-button">Mercedes-Benz C-Class - M013</button>
+            <button class="maintenance-button">Lexus ES - N014</button>
+            <button class="maintenance-button">Genesis G70 - O015</button>
+            <button class="maintenance-button">Jaguar XE - P016</button>
+            <button class="maintenance-button">Alfa Romeo Giulia - Q017</button>
+            <button class="maintenance-button">Porsche Macan - R018</button>
+            <button class="maintenance-button">Land Rover Discovery - S019</button>
+        </div>
+        <div class="maintenance-box">
+            <h2 style="text-align: center;">Currently Rented</h2>
+            <button class="maintenance-button">Honda Civic - A001</button>
+            <button class="maintenance-button">Toyota Corolla - B002</button>
+            <button class="maintenance-button">Ford Focus - C003</button>
+            <button class="maintenance-button">Chevrolet Malibu - D004</button>
+            <button class="maintenance-button">Nissan Altima - E005</button>
+            <button class="maintenance-button">Hyundai Elantra - F006</button>
+        </div>
+        <div class="maintenance-box">
+            <h2 style="text-align: center;">Checkup Update</h2>
+            <button class="maintenance-button">Car 1: Needs oil change</button>
+            <button class="maintenance-button">Car 2: Brake inspection required</button>
+            <button class="maintenance-button">Car 3: Tire replacement needed</button>
+            <button class="maintenance-button">Car 1: Needs oil change</button>
+            <button class="maintenance-button">Car 2: Brake inspection required</button>
+            <button class="maintenance-button">Car 3: Tire replacement needed</button>
+            <button class="maintenance-button">Car 1: Needs oil change</button>
+            <button class="maintenance-button">Car 2: Brake inspection required</button>
+            <button class="maintenance-button">Car 3: Tire replacement needed</button>
+            <button class="maintenance-button">Car 1: Needs oil change</button>
+            <button class="maintenance-button">Car 2: Brake inspection required</button>
+            <button class="maintenance-button">Car 3: Tire replacement needed</button>
+            <button class="maintenance-button">Car 1: Needs oil change</button>
+            <button class="maintenance-button">Car 2: Brake inspection required</button>
+            <button class="maintenance-button">Car 3: Tire replacement needed</button>
+        </div>
+        <div class="maintenance-box">
+            <h2 style="text-align: center;">Oil Change Notification</h2>
+            <button class="maintenance-button">Honda Civic - A001</button>
+            <button class="maintenance-button">Toyota Corolla - B002</button>
+            <button class="maintenance-button">Ford Focus - C003</button>
+            <button class="maintenance-button">Chevrolet Malibu - D004</button>
+            <button class="maintenance-button">Nissan Altima - E005</button>
+            <button class="maintenance-button">Hyundai Elantra - F006</button>
+        </div>
+        
+    </div>
+    <div id="addCarModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Add New Car</h2>
+            <form id="addCarForm">
+                <label for="carId">ID:</label>
+                <input type="text" id="carId" name="carId" required><br>
+                <label for="vin">VIN Number:</label>
+                <input type="text" id="vin" name="vin" required><br>
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required><br>
+                <label for="year">Year:</label>
+                <input type="number" id="year" name="year" required><br>
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="color" required><br>
+                <label for="manufacturer">Manufacturer:</label>
+                <input type="text" id="manufacturer" name="manufacturer" required><br>
+                <label for="mileage">Current Mileage:</label>
+                <input type="text" id="mileage" name="mileage" required><br>
+                <label for="engine">Engine:</label>
+                <input type="text" id="engine" name="engine" required><br>
+                <label for="transmission">Transmission:</label>
+                <input type="text" id="transmission" name="transmission" required><br>
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required><br>
+                <button type="submit">Add Vehicle</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div id="rentCarModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Rent Vehicle</h2>
+            <form id="addCarForm">
+                <label for="carId">ID:</label>
+                <input type="text" id="carId" name="carId" required><br>
+                <label for="vin">Name:</label>
+                <input type="text" id="vin" name="vin" required><br>
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required><br>
+                <label for="year">date:</label>
+                <input type="number" id="year" name="year" required><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <div id="returnCarModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Returned Vehicle</h2>
+            <form id="addCarForm">
+                <label for="carId">ID:</label>
+                <input type="text" id="carId" name="carId" required><br>
+                <label for="vin">Staff Name:</label>
+                <input type="text" id="vin" name="vin" required><br>
+                <label for="vin">Customer Name:</label>
+                <input type="text" id="vin" name="vin" required><br>
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required><br>
+                <label for="year">date:</label>
+                <input type="number" id="year" name="year" required><br>
+                <label for="year">Milage:</label>
+                <input type="number" id="year" name="year" required><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    function openAddModal() {
+        document.getElementById('addCarModal').style.display = 'block';
+    }
+    function rentAddModal() {
+        document.getElementById('rentCarModal').style.display = 'block';
+    }
+    function returnAddModal() {
+        document.getElementById('returnCarModal').style.display = 'block';
+    }
+    function closeModal() {
+        document.getElementById('addCarModal').style.display = 'none';
+        document.getElementById('rentCarModal').style.display = 'none';
+        document.getElementById('returnCarModal').style.display = 'none';
+
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('addCarModal')) {
+            closeModal();
+        }
+        if (event.target == document.getElementById('rentCarModal')) {
+            closeModal();
+        }
+        if (event.target == document.getElementById('returnCarModal')) {
+            closeModal();
+        }
+    }
+    
+</script>
+</html>

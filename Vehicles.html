@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Attributes Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <nav>
+            <a href="index.html" class="redirect-button">Back to Home</a>
+        <h1 style="padding-left: 30vw;">
+            Vehicles List</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." class="search-input">
+        </div>
+    </nav>
+    </div>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Model</th>
+                    <th>VIN number</th>
+                    <th>Year</th>
+                    <th>Color</th>
+                    <th>Manufacturer</th>
+                    <th>Current Mileage</th>
+                    <th>Engine</th>
+                    <th>Transmission</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="carTableBody">
+                <tr onclick="window.location.href='/html%20files/vehicle.html';" style="cursor: pointer;">
+                    <td>1</td>
+                    <td>Honda Civic</td>
+                    <td>1HGBH41JXMN109186</td>
+                    <td>2022</td>
+                    <td>Blue</td>
+                    <td>Honda</td>
+                    <td>12,345 miles</td>
+                    <td>2.0L I4</td>
+                    <td>Automatic</td>
+                    <td>Available</td>
+                </tr>
+                <tr onclick="window.location.href='/html%20files/vehicle.html';" style="cursor: pointer;">
+                    <td>2</td>
+                    <td>Chevrolet Malibu - D004</td>
+                    <td>1HGBH41JXMN109186</td>
+                    <td>2022</td>
+                    <td>Blue</td>
+                    <td>Honda</td>
+                    <td>12,345 miles</td>
+                    <td>2.0L I4</td>
+                    <td>Automatic</td>
+                    <td>Available</td>
+                </tr>
+                <tr onclick="window.location.href='/html%20files/vehicle.html';" style="cursor: pointer;">
+                    <td>3</td>
+                    <td>Nissan Altima - E005</td>
+                    <td>1HGBH41JXMN109186</td>
+                    <td>2022</td>
+                    <td>Blue</td>
+                    <td>Honda</td>
+                    <td>12,345 miles</td>
+                    <td>2.0L I4</td>
+                    <td>Automatic</td>
+                    <td>Available</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function() {
+            var searchTerm = this.value.toLowerCase();
+            var tableRows = document.querySelectorAll('#carTableBody tr');
+
+            tableRows.forEach(function(row) {
+                var modelCell = row.cells[1];
+                var modelText = modelCell.textContent.toLowerCase();
+
+                if (modelText.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Information</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            Vehicle Information
+        </div>
+        <div class="card-body">
+            <p><strong>Model:</strong> Honda Civic</p>
+            <p><strong>Year:</strong> 2022</p>
+            <p><strong>Color:</strong> Blue</p>
+            <p><strong>VIN Number:</strong> 1HGBH41JXMN109186</p>
+            <p><strong>Current Mileage:</strong> 12,345 miles</p>
+            <p><strong>Engine:</strong> 2.0L I4</p>
+            <p><strong>Transmission:</strong> Automatic</p>
+            <p><strong>Total Repair Costs:</strong> 2000$</p>
+            <p><strong>Status:</strong> Available</p>
+        </div>
+        
+    <div id="updateCarModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Returned Vehicle</h2>
+            <form id="addCarForm">
+                <label for="carId">ID:</label>
+                <input type="text" id="carId" name="carId" required><br>
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required><br>
+                <label for="year">date:</label>
+                <input type="number" id="year" name="year" required><br>
+                <label for="year">Milage:</label>
+                <input type="number" id="year" name="year" required><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+    <div id="transactionCarModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Returned Vehicle</h2>
+            <form id="addCarForm">
+                <label for="carId">ID:</label>
+                <input type="text" id="carId" name="carId" required><br>
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required><br>
+                <label for="model">Cost:</label>
+                <input type="text" id="model" name="model" required><br>
+                <label for="year">date:</label>
+                <input type="number" id="year" name="year" required><br>
+                <label for="note">Note:</label>
+                <input type="number" id="year" name="year" required><br>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+        <div class="card-footer">
+            <a href="index.html" class="button">Back to Home</a>
+            <a onclick="updateAddModal()" class="button update-button">Update Vehicle</a>
+            <a onclick="transactionAddModal()" class="button update-button">Add Transaction</a>
+            <a href="Transactions" class="button">Show Vehicle Transactions</a>
+        </div>
+
+    </div>
+    <script>
+    function updateAddModal() {
+        document.getElementById('updateCarModal').style.display = 'block';
+    }
+    function transactionAddModal() {
+        document.getElementById('transactionCarModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('updateCarModal').style.display = 'none';
+        document.getElementById('transactionCarModal').style.display = 'none';
+
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('updateCarModal')) {
+            closeModal();
+        }
+        if (event.target == document.getElementById('transactionCarModal')) {
+            closeModal();
+        }
+    }
+    
+</script>
+</body>
+</html>
